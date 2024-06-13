@@ -16,7 +16,7 @@ Avant de commencer, assurez-vous d'avoir installé les outils suivants :
     Clonez ce repository :
 
 ```bash
-git clone https://github.com/votre_utilisateur/votre_repo.git
+git clone https://github.com/drbea/WeatherApp.git
 ```
 
 ## Installez les dépendances Python :
