@@ -8,7 +8,7 @@ def index(request):
     if request.method == 'POST':
         city = request.POST.get('city', 'Paris')  # Récupérer la ville à partir des données POST
         api_key = settings.OPENWEATHERMAP_API_KEY
-        url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric'
+        url = f'{settings.OPENWEATHERMAP_API_URL}/weather?q={city}&appid={api_key}&units=metric'
         response = requests.get(url)
         weather_data = response.json()
         

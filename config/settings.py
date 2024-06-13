@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&qx-y=+-$!nv_armj4@75j$9=%un4c24eaeyr6km517o=v0o#q'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -41,14 +45,15 @@ INSTALLED_APPS = [
     'meteo.apps.MeteoConfig',
 ]
 
-OPENWEATHERMAP_API_KEY = "4a7996dd125b5e0b9c8aa2960624a7db"
+OPENWEATHERMAP_API_KEY = os.getenv("OPENWEATHERMAP_API_KEY")
 
-# OPENWEATHERMAP_API_URL = "https://api.openweathermap.org/data/2.5"
-# OPENWEATHERMAP_ICON_URL = "https://openweathermap.org/img/w"
-OPENWEATHERMAP_UNITS = "metric"
-OPENWEATHERMAP_LANG = "en"
-# OPENWEATHERMAP_APPID = "4a7996dd125b5e0b9c8aa2960624a7db"
-DEFAULT_CITY = "London"
+OPENWEATHERMAP_API_URL = os.getenv("OPENWEATHERMAP_API_URL")
+
+#OPENWEATHERMAP_ICON_URL = "https://openweathermap.org/img/w"
+OPENWEATHERMAP_UNITS = os.getenv("OPENWEATHERMAP_UNITS")
+OPENWEATHERMAP_LANG = os.getenv("OPENWEATHERMAP_LANG")
+OPENWEATHERMAP_APPID = os.getenv("OPENWEATHERMAP_APPID")
+DEFAULT_CITY = os.getenv("DEFAULT_CITY")
 
 
 MIDDLEWARE = [
