@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+
+{% block content %}    
+
+
+
+<div class="container mt-5">
+    <!-- Formulaire de saisie de la ville -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h1 class="text-center">Rechercher la météo</h1>
+        </div>
+        <div class="card-body">
+            <form method="post" action="" class="mt-4">
+                {% csrf_token %}  <!-- Ajouter le token CSRF pour la sécurité -->
+                <div class="form-group">
+                    <input type="text" name="city" class="form-control" placeholder="Entrez une ville" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Obtenir la météo</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Affichage des informations météo -->
+    {% if weather_data %}
+    <div class="card">
+        <div class="card-header">
+            <h1 class="text-center">Météo pour {{ city }}</h1>
+        </div>
+        <div class="card-body">
+            {% if weather_data.cod == 200 %}
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>Température</h4>
+                        <p>{{ weather_data.main.temp }} °C</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Condition</h4>
+                        <p>{{ weather_data.weather.0.description }}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Humidité</h4>
+                        <p>{{ weather_data.main.humidity }} %</p>
+                    </div>
+                </div>
+            {% else %}
+                <div class="alert alert-danger" role="alert">
+                    {{ weather_data.message }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+
+{% endblock content %}
+    
