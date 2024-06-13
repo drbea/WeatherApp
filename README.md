@@ -28,8 +28,8 @@ pip install -r requirements.txt
     Obtenez une clé API gratuite sur OpenWeatherMap.
     Ajoutez votre clé API dans le fichier settings.py de Django :
 ```python
-        # settings.py
-        OPENWEATHERMAP_API_KEY = 'votre_clé_api'
+# settings.py
+OPENWEATHERMAP_API_KEY = 'votre_clé_api'
 ```
 
 #Utilisation
