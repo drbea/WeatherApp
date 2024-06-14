@@ -5,4 +5,6 @@ app_name = 'meteo'
 
 urlpatterns = [
     path('', views.index, name='index'),
+
+    
 ]
