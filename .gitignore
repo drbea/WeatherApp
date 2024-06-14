@@ -1,4 +1,12 @@
 
+#python
+*.pyc
+*-
+/static/
+.history/
+.vscode/
+__pycache__
+
 .env
 info.py
 db.sqlite3
