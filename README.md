@@ -24,6 +24,10 @@ git clone https://github.com/drbea/WeatherApp.git
 pip install -r requirements.txt
 ```
 
+## Créer un fichier nommé:   .env
+y mettre votre clé api d'open weather map obtenu et le chargé a travers le module dotenv dans les paramètres de votre projet 
+
+
 ## Configurez votre clé API OpenWeatherMap :
     Obtenez une clé API gratuite sur OpenWeatherMap.
     Ajoutez votre clé API dans le fichier settings.py de Django :
